@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title%} {% endblock%}</title>
+	<style type="text/css">
+		*{
+			font-family: courier;
+			font-size: 30px;
+		}
+		.nav {
+			background-color: black;
+			padding: 10px;
+		}
+		.nav a{
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<CENTER>
+		<div class="nav">
+			<a href="{% url 'home' %}">Home</a>
+			<a href="{% url 'create' %}">Create</a>
+		</div>
+		{% block content%} {% endblock%}
+	</CENTER>
+
+</body>
+</html>

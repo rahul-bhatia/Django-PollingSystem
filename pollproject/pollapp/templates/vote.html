@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Voting Page{% endblock%}
+
+
+{% block content %}
+
+<h2>{{data.question}}</h2>
+<FORM method="POST" action="{% url 'vote' id=data.id %}">
+	{% csrf_token%}
+	<input type="radio" name="r1" value="op1" required>	{{data.op1}} <br><br>
+	<input type="radio" name="r1" value="op2" required>	{{data.op2}} <br><br>
+	<input type="radio" name="r1" value="op3" required>	{{data.op3}} <br><br>
+	<input type="submit" value="Save">
+</FORM>
+{{msg}}
+
+{% endblock %}
